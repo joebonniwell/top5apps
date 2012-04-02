@@ -13,6 +13,17 @@
 		1F00BDD215280AA60069BD6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F00BDD015280AA60069BD6C /* InfoPlist.strings */; };
 		1F00BDD415280AA60069BD6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00BDD315280AA60069BD6C /* main.m */; };
 		1F00BDD815280AA60069BD6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00BDD715280AA60069BD6C /* AppDelegate.m */; };
+		1F00BDE115280D670069BD6C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F00BDE015280D670069BD6C /* AudioToolbox.framework */; };
+		1F00BDE315280D6E0069BD6C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F00BDE215280D6E0069BD6C /* CFNetwork.framework */; };
+		1F00BDE515280D750069BD6C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F00BDE415280D750069BD6C /* SystemConfiguration.framework */; };
+		1F00BDE715280D7B0069BD6C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F00BDE615280D7B0069BD6C /* MobileCoreServices.framework */; };
+		1F00BDE915280D8D0069BD6C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F00BDE815280D8D0069BD6C /* libz.dylib */; };
+		1F00BDEB15280D940069BD6C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F00BDEA15280D940069BD6C /* Security.framework */; };
+		1F00BDED15280D9B0069BD6C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F00BDEC15280D9B0069BD6C /* QuartzCore.framework */; };
+		1F00BDEF15280E620069BD6C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F00BDEE15280E620069BD6C /* Parse.framework */; };
+		1F00BDF9152812FC0069BD6C /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00BDF8152812FC0069BD6C /* AccountViewController.m */; };
+		1F00BDFC152948250069BD6C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00BDFB152948250069BD6C /* MenuViewController.m */; };
+		1F00BE00152951BF0069BD6C /* Top5DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00BDFF152951BF0069BD6C /* Top5DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +37,21 @@
 		1F00BDD515280AA60069BD6C /* Top5Apps-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Top5Apps-Prefix.pch"; sourceTree = "<group>"; };
 		1F00BDD615280AA60069BD6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1F00BDD715280AA60069BD6C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1F00BDE015280D670069BD6C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1F00BDE215280D6E0069BD6C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1F00BDE415280D750069BD6C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1F00BDE615280D7B0069BD6C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1F00BDE815280D8D0069BD6C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		1F00BDEA15280D940069BD6C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1F00BDEC15280D9B0069BD6C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1F00BDEE15280E620069BD6C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		1F00BDF7152812FC0069BD6C /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		1F00BDF8152812FC0069BD6C /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		1F00BDFA152948250069BD6C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		1F00BDFB152948250069BD6C /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		1F00BDFD15294B500069BD6C /* Top5NavigationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Top5NavigationDelegate.h; sourceTree = "<group>"; };
+		1F00BDFE152951BF0069BD6C /* Top5DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Top5DetailViewController.h; sourceTree = "<group>"; };
+		1F00BDFF152951BF0069BD6C /* Top5DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Top5DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,9 +59,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F00BDED15280D9B0069BD6C /* QuartzCore.framework in Frameworks */,
+				1F00BDEB15280D940069BD6C /* Security.framework in Frameworks */,
+				1F00BDE915280D8D0069BD6C /* libz.dylib in Frameworks */,
+				1F00BDCC15280AA60069BD6C /* CoreGraphics.framework in Frameworks */,
+				1F00BDE715280D7B0069BD6C /* MobileCoreServices.framework in Frameworks */,
+				1F00BDE515280D750069BD6C /* SystemConfiguration.framework in Frameworks */,
+				1F00BDE315280D6E0069BD6C /* CFNetwork.framework in Frameworks */,
+				1F00BDE115280D670069BD6C /* AudioToolbox.framework in Frameworks */,
 				1F00BDC815280AA60069BD6C /* UIKit.framework in Frameworks */,
 				1F00BDCA15280AA60069BD6C /* Foundation.framework in Frameworks */,
-				1F00BDCC15280AA60069BD6C /* CoreGraphics.framework in Frameworks */,
+				1F00BDEF15280E620069BD6C /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +96,14 @@
 		1F00BDC615280AA60069BD6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F00BDE815280D8D0069BD6C /* libz.dylib */,
+				1F00BDEE15280E620069BD6C /* Parse.framework */,
+				1F00BDEC15280D9B0069BD6C /* QuartzCore.framework */,
+				1F00BDEA15280D940069BD6C /* Security.framework */,
+				1F00BDE615280D7B0069BD6C /* MobileCoreServices.framework */,
+				1F00BDE415280D750069BD6C /* SystemConfiguration.framework */,
+				1F00BDE215280D6E0069BD6C /* CFNetwork.framework */,
+				1F00BDE015280D670069BD6C /* AudioToolbox.framework */,
 				1F00BDC715280AA60069BD6C /* UIKit.framework */,
 				1F00BDC915280AA60069BD6C /* Foundation.framework */,
 				1F00BDCB15280AA60069BD6C /* CoreGraphics.framework */,
@@ -74,6 +116,14 @@
 			children = (
 				1F00BDD615280AA60069BD6C /* AppDelegate.h */,
 				1F00BDD715280AA60069BD6C /* AppDelegate.m */,
+				1F00BDFD15294B500069BD6C /* Top5NavigationDelegate.h */,
+				1F00BDF615280F300069BD6C /* AppSearchViewController */,
+				1F00BDF515280F260069BD6C /* AppListViewController */,
+				1F00BDF415280F170069BD6C /* AppDetailViewController */,
+				1F00BDF315280F0F0069BD6C /* Top5DetailViewController */,
+				1F00BDF215280EFD0069BD6C /* Top5ListViewController */,
+				1F00BDF115280EF40069BD6C /* AccountViewController */,
+				1F00BDF015280ED70069BD6C /* MenuViewController */,
 				1F00BDCE15280AA60069BD6C /* Supporting Files */,
 			);
 			path = Top5Apps;
@@ -88,6 +138,61 @@
 				1F00BDD515280AA60069BD6C /* Top5Apps-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F00BDF015280ED70069BD6C /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F00BDFA152948250069BD6C /* MenuViewController.h */,
+				1F00BDFB152948250069BD6C /* MenuViewController.m */,
+			);
+			name = MenuViewController;
+			sourceTree = "<group>";
+		};
+		1F00BDF115280EF40069BD6C /* AccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F00BDF7152812FC0069BD6C /* AccountViewController.h */,
+				1F00BDF8152812FC0069BD6C /* AccountViewController.m */,
+			);
+			name = AccountViewController;
+			sourceTree = "<group>";
+		};
+		1F00BDF215280EFD0069BD6C /* Top5ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Top5ListViewController;
+			sourceTree = "<group>";
+		};
+		1F00BDF315280F0F0069BD6C /* Top5DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F00BDFE152951BF0069BD6C /* Top5DetailViewController.h */,
+				1F00BDFF152951BF0069BD6C /* Top5DetailViewController.m */,
+			);
+			name = Top5DetailViewController;
+			sourceTree = "<group>";
+		};
+		1F00BDF415280F170069BD6C /* AppDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AppDetailViewController;
+			sourceTree = "<group>";
+		};
+		1F00BDF515280F260069BD6C /* AppListViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AppListViewController;
+			sourceTree = "<group>";
+		};
+		1F00BDF615280F300069BD6C /* AppSearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AppSearchViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +258,9 @@
 			files = (
 				1F00BDD415280AA60069BD6C /* main.m in Sources */,
 				1F00BDD815280AA60069BD6C /* AppDelegate.m in Sources */,
+				1F00BDF9152812FC0069BD6C /* AccountViewController.m in Sources */,
+				1F00BDFC152948250069BD6C /* MenuViewController.m in Sources */,
+				1F00BE00152951BF0069BD6C /* Top5DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +326,10 @@
 		1F00BDDC15280AA60069BD6C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Top5Apps/Top5Apps-Prefix.pch";
 				INFOPLIST_FILE = "Top5Apps/Top5Apps-Info.plist";
@@ -229,6 +341,10 @@
 		1F00BDDD15280AA60069BD6C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Top5Apps/Top5Apps-Prefix.pch";
 				INFOPLIST_FILE = "Top5Apps/Top5Apps-Info.plist";

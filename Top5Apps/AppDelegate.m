@@ -12,6 +12,34 @@
 
 @synthesize window = _window;
 
++ (void)initialize
+{
+    NSString *preferenceListPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"Settings.bundle/Root.plist"];
+    
+    NSDictionary *settingsDictionary = [NSDictionary dictionaryWithContentsOfFile:preferenceListPath];
+    
+    NSMutableArray *settingsArray = [settingsDictionary objectForKey:@"PreferenceSpecifiers"];
+    NSMutableDictionary *defaultSettingsDictionary = [NSMutableDictionary dictionary];
+    
+    for (NSDictionary *settingDict in settingsArray)
+    {
+        NSString *settingKey = [settingDict objectForKey:@"Key"];
+        if (settingKey)
+        {
+            id settingDefaultValue = [settingDict objectForKey:@"DefaultValue"];
+            [defaultSettingsDictionary setObject:settingDefaultValue forKey:settingKey];
+        }
+    }
+    
+    // State Defaults
+    [defaultSettingsDictionary setObject:[NSNumber numberWithBool:YES] forKey:@"FirstRunEver"];
+    [defaultSettingsDictionary setObject:[NSNumber numberWithInteger:0] forKey:@"LastView"];
+    
+    // Version tracking...
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultSettingsDictionary];
+}
+
 - (void)dealloc
 {
     [_window release];
@@ -21,9 +49,33 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window.backgroundColor = [UIColor blackColor];
+    
+    [Parse setApplicationId:@"Uw8iVpXh4YnwzrBpx819VU7Ir0HSH4wDzZ0ub2L2" clientKey:@"5WVy7oPBaotvAmx5DEGsA1TS6LOHblC0gtGOUf7r"];
+    [PFFacebookUtils initializeWithApplicationId:@"260849984008044"];
+    
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self setNavigationController:[[[UINavigationController alloc] initWithRootViewController:[self menuViewController]] autorelease]];
+    [[self window] setRootViewController:[self navigationController]];
     [self.window makeKeyAndVisible];
+    
+    if([[[NSUserDefaults standardUserDefaults] valueForKey:@"FirstRunEver"] boolValue])
+    {
+        // Display the account screen with welcome banner
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:NO] forKey:@"FirstRunEver"];
+        
+        // Modally display the account page overtop of the menu...
+        //[[self menuViewController] presentViewController:[self accountViewController] animated:NO completion:nil];
+        [[self menuViewController] presentModalViewController:[self accountViewController] animated:NO];
+        
+        NSLog(@"First run");
+    }
+    else
+    {
+        // Display the last view controller...
+    }
+    
     return YES;
 }
 
@@ -66,4 +118,91 @@
      */
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url 
+{
+    return [PFFacebookUtils handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation 
+{
+    return [PFFacebookUtils handleOpenURL:url]; 
+}
+
+#pragma mark - Top5Navigation Methods
+
+- (void)showMenuViewController
+{
+    if ([[[self navigationController] viewControllers] containsObject:[self menuViewController]])
+    {
+        [[self navigationController] popToViewController:[self menuViewController] animated:YES];
+        return;
+    }
+    [[self navigationController] pushViewController:[self menuViewController] animated:YES];
+}
+
+- (void)showUsersTop5ViewController
+{
+    [[self top5DetailViewController] setUsersTop5:YES];
+    // Set the top5 array...
+    
+    if ([PFUser currentUser])
+    {
+        NSArray *usersTop5Apps = [[PFUser currentUser] objectForKey:@"top5Apps"];
+        if (!usersTop5Apps)
+            [[PFUser currentUser] setObject:[NSArray array] forKey:@"top5Apps"];
+        
+        usersTop5Apps = [[PFUser currentUser] objectForKey:@"top5Apps"];
+        
+        if (!usersTop5Apps)
+            NSLog(@"Still no array");
+        
+        [[self top5DetailViewController] setTop5Apps:usersTop5Apps];
+    }
+    
+    
+    
+    
+    [[self navigationController] pushViewController:[self top5DetailViewController] animated:YES];
+}
+
+- (void)dismissAccountViewController
+{
+    [[self menuViewController] dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - AccountViewController
+
+- (AccountViewController*)accountViewController
+{
+    if (accountViewController_gv)
+        return accountViewController_gv;
+    accountViewController_gv = [[AccountViewController alloc] init];
+    [accountViewController_gv setNavigationDelegate:self];
+    return accountViewController_gv;
+}
+
+#pragma mark - MenuViewController
+
+- (MenuViewController*)menuViewController
+{
+    if (menuViewController_gv)
+        return menuViewController_gv;
+    menuViewController_gv = [[MenuViewController alloc] init];
+    [menuViewController_gv setNavigationDelegate:self];
+    return menuViewController_gv;
+}
+
+#pragma mark - Top5DetailViewController
+
+- (Top5DetailViewController*)top5DetailViewController
+{
+    if (top5DetailViewController_gv)
+        return top5DetailViewController_gv;
+    top5DetailViewController_gv = [[Top5DetailViewController alloc] init];
+    return top5DetailViewController_gv;
+}
+
+#pragma mark - Property Synthesis
+
+@synthesize navigationController;
 @end
