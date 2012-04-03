@@ -17,5 +17,7 @@
 - (void)showUsersTop5ViewController;
 //- (void)showTop5ViewControllerWithList:(PFObject*)top5List;
 
+- (void)showAppSearchViewController;
+
 - (void)dismissAccountViewController;
 @end

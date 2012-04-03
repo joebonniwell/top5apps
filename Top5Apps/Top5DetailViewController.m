@@ -57,6 +57,17 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - UITableView Delegate Methods
+
+- (void)tableView:(UITableView *)argTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([[self top5Apps] count] < indexPath.row)
+    {
+        [argTableView deselectRowAtIndexPath:indexPath animated:YES];
+        [[self navigationDelegate] showAppSearchViewController];
+    }
+}
+
 #pragma mark - UITableView DataSource Methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -69,11 +80,11 @@
     return 5;
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell*)tableView:(UITableView *)argTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *tableViewCellIdentifier = @"TableViewCellIdentifier";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCellIdentifier];
+    UITableViewCell *cell = [argTableView dequeueReusableCellWithIdentifier:tableViewCellIdentifier];
     if (!cell)
     {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableViewCellIdentifier] autorelease];
@@ -88,6 +99,7 @@
 
 #pragma mark - Property Synthesis
 
+@synthesize navigationDelegate;
 @synthesize tableView;
 
 @synthesize usersTop5;

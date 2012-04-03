@@ -24,6 +24,7 @@
 		1F00BDF9152812FC0069BD6C /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00BDF8152812FC0069BD6C /* AccountViewController.m */; };
 		1F00BDFC152948250069BD6C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00BDFB152948250069BD6C /* MenuViewController.m */; };
 		1F00BE00152951BF0069BD6C /* Top5DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00BDFF152951BF0069BD6C /* Top5DetailViewController.m */; };
+		D8B52022152AA63D0060EEEE /* AppSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B52021152AA63D0060EEEE /* AppSearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		1F00BDFD15294B500069BD6C /* Top5NavigationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Top5NavigationDelegate.h; sourceTree = "<group>"; };
 		1F00BDFE152951BF0069BD6C /* Top5DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Top5DetailViewController.h; sourceTree = "<group>"; };
 		1F00BDFF152951BF0069BD6C /* Top5DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Top5DetailViewController.m; sourceTree = "<group>"; };
+		D8B52020152AA63D0060EEEE /* AppSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSearchViewController.h; sourceTree = "<group>"; };
+		D8B52021152AA63D0060EEEE /* AppSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,8 @@
 		1F00BDF615280F300069BD6C /* AppSearchViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D8B52020152AA63D0060EEEE /* AppSearchViewController.h */,
+				D8B52021152AA63D0060EEEE /* AppSearchViewController.m */,
 			);
 			name = AppSearchViewController;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				1F00BDF9152812FC0069BD6C /* AccountViewController.m in Sources */,
 				1F00BDFC152948250069BD6C /* MenuViewController.m in Sources */,
 				1F00BE00152951BF0069BD6C /* Top5DetailViewController.m in Sources */,
+				D8B52022152AA63D0060EEEE /* AppSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +378,7 @@
 				1F00BDDD15280AA60069BD6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

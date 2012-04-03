@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Top5NavigationDelegate.h"
 
 @interface Top5DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, assign) id<Top5NavigationDelegate> navigationDelegate;
 
 @property (strong, nonatomic) UITableView *tableView;
 

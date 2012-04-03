@@ -143,7 +143,6 @@
 - (void)showUsersTop5ViewController
 {
     [[self top5DetailViewController] setUsersTop5:YES];
-    // Set the top5 array...
     
     if ([PFUser currentUser])
     {
@@ -163,6 +162,11 @@
     
     
     [[self navigationController] pushViewController:[self top5DetailViewController] animated:YES];
+}
+
+- (void)showAppSearchViewController
+{
+    [[self navigationController] pushViewController:[self appSearchViewController] animated:YES];
 }
 
 - (void)dismissAccountViewController
@@ -199,7 +203,19 @@
     if (top5DetailViewController_gv)
         return top5DetailViewController_gv;
     top5DetailViewController_gv = [[Top5DetailViewController alloc] init];
+    [top5DetailViewController_gv setNavigationDelegate:self];
     return top5DetailViewController_gv;
+}
+
+#pragma mark - AppSearchViewController
+
+- (AppSearchViewController*)appSearchViewController
+{
+    if (appSearchViewController_gv)
+        return appSearchViewController_gv;
+    appSearchViewController_gv = [[AppSearchViewController alloc] init];
+    [appSearchViewController_gv setNavigationDelegate:self];
+    return appSearchViewController_gv;
 }
 
 #pragma mark - Property Synthesis
