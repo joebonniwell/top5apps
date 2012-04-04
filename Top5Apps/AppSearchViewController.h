@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Top5NavigationDelegate.h"
+#import <Parse/Parse.h>
 
 @interface AppSearchViewController : UIViewController <UISearchDisplayDelegate, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 

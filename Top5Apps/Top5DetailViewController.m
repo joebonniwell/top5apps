@@ -61,11 +61,11 @@
 
 - (void)tableView:(UITableView *)argTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[self top5Apps] count] < indexPath.row)
-    {
-        [argTableView deselectRowAtIndexPath:indexPath animated:YES];
-        [[self navigationDelegate] showAppSearchViewController];
-    }
+    [argTableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+    [self setAppSlotBeingEdited:(indexPath.row + 1)];
+        
+    [[self navigationDelegate] showAppSearchViewController];
 }
 
 #pragma mark - UITableView DataSource Methods
@@ -92,17 +92,69 @@
         [[cell textLabel] setTextColor:[UIColor whiteColor]];
     }
     
-    [[cell textLabel] setText:[NSString stringWithFormat:@"#%d App", [indexPath row]]];
+    NSLog(@"Cell for row: %d", indexPath.row);
+    switch (indexPath.row) 
+    {
+        case 0:
+        {
+            if ([self app1])
+                [[cell textLabel] setText:[[self app1] objectForKey:@"appName"]];
+            else 
+                [[cell textLabel] setText:@"#1 - No App Selected"];
+            break;
+        }
+        case 1:
+        {
+            if ([self app2])
+                [[cell textLabel] setText:[[self app2] objectForKey:@"appName"]];
+            else 
+                [[cell textLabel] setText:@"#2 - No App Selected"];
+            break;
+        }
+        case 2:
+        {
+            if ([self app3])
+                [[cell textLabel] setText:[[self app3] objectForKey:@"appName"]];
+            else 
+                [[cell textLabel] setText:@"#3 - No App Selected"];
+            break;
+        }
+        case 3:
+        {
+            if ([self app4])
+                [[cell textLabel] setText:[[self app4] objectForKey:@"appName"]];
+            else 
+                [[cell textLabel] setText:@"#4 - No App Selected"];
+            break;
+        }
+        case 4:
+        {
+            if ([self app5])
+                [[cell textLabel] setText:[[self app5] objectForKey:@"appName"]];
+            else 
+                [[cell textLabel] setText:@"#5 - No App Selected"];
+            break;
+        }
+        default:
+            break;
+    }
     
     return cell;
 }
 
 #pragma mark - Property Synthesis
 
+@synthesize appSlotBeingEdited;
+
 @synthesize navigationDelegate;
 @synthesize tableView;
 
 @synthesize usersTop5;
-@synthesize top5Apps;
+
+@synthesize app1;
+@synthesize app2;
+@synthesize app3;
+@synthesize app4;
+@synthesize app5;
 
 @end

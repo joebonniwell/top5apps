@@ -55,8 +55,62 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSInteger appID = [[[[self appResults] objectAtIndex:indexPath.row] objectForKey:@"trackId"] integerValue];
+    NSString *appName = [[[self appResults] objectAtIndex:indexPath.row] objectForKey:@"trackName"];
+    NSString *appMaker = [[[self appResults] objectAtIndex:indexPath.row] objectForKey:@"artistName"];
     
+    PFQuery *appQuery = [PFQuery queryWithClassName:@"App"];
+    [appQuery whereKey:@"appID" equalTo:[NSString stringWithFormat:@"%d", appID]];
+    [appQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+        if (!error)
+        {
+            PFObject *app;
+            
+            if ([objects count] > 0)
+            {
+                NSLog(@"Objects found: %d", [objects count]);
+                
+                app = [objects objectAtIndex:0];
+                
+                BOOL needsSaving = NO;
+                
+                if ([[app objectForKey:@"appName"] isEqualToString:appName] == NO)
+                {
+                    needsSaving = YES;
+                    [app setObject:appName forKey:@"appName"];
+                }
+                
+                if ([[app objectForKey:@"appMaker"] isEqualToString:appMaker] == NO)
+                {
+                    needsSaving = YES;
+                    [app setObject:appMaker forKey:@"appMaker"];
+                }
+                
+                if (needsSaving)
+                    [app save];
+            }
+            else 
+            {
+                NSLog(@"No App found.. creating");
+                
+                // Create an app
+                app = [PFObject objectWithClassName:@"App"];
+                [app setObject:[NSNumber numberWithInteger:appID] forKey:@"appID"];
+                [app setObject:appName forKey:@"appName"];
+                [app setObject:appMaker forKey:@"appMaker"];
+                [app save];
+            }
+            
+            [[self navigationDelegate] showUsersTop5ViewControllerWithChosenApp:app];
+        }
+        else
+        {
+            NSLog(@"App Query Error: %@", [error userInfo]); 
+        }
+     }];
     
+    // Show the loading view...?
     
     // Get App Data from JSON...
     

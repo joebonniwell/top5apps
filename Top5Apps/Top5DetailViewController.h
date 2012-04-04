@@ -11,11 +11,18 @@
 
 @interface Top5DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, assign) NSInteger appSlotBeingEdited;
+
 @property (nonatomic, assign) id<Top5NavigationDelegate> navigationDelegate;
 
 @property (strong, nonatomic) UITableView *tableView;
 
 @property (nonatomic) BOOL usersTop5;
-@property (strong, nonatomic) NSArray *top5Apps;
+
+@property (nonatomic, retain) PFObject *app1;
+@property (nonatomic, retain) PFObject *app2;
+@property (nonatomic, retain) PFObject *app3;
+@property (nonatomic, retain) PFObject *app4;
+@property (nonatomic, retain) PFObject *app5;
 
 @end

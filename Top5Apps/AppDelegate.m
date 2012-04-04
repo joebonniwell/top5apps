@@ -146,22 +146,69 @@
     
     if ([PFUser currentUser])
     {
-        NSArray *usersTop5Apps = [[PFUser currentUser] objectForKey:@"top5Apps"];
-        if (!usersTop5Apps)
-            [[PFUser currentUser] setObject:[NSArray array] forKey:@"top5Apps"];
+        if ([[PFUser currentUser] objectForKey:@"app1"])
+        {
+            [[[PFUser currentUser] objectForKey:@"app1"] fetchIfNeeded];
+            [[self top5DetailViewController] setApp1:[[PFUser currentUser] objectForKey:@"app1"]];
+        }
         
-        usersTop5Apps = [[PFUser currentUser] objectForKey:@"top5Apps"];
+        if ([[PFUser currentUser] objectForKey:@"app2"])
+        {
+            [[[PFUser currentUser] objectForKey:@"app2"] fetchIfNeeded];
+            [[self top5DetailViewController] setApp2:[[PFUser currentUser] objectForKey:@"app2"]];
+        }
+        if ([[PFUser currentUser] objectForKey:@"app3"])
+        {
+            [[[PFUser currentUser] objectForKey:@"app3"] fetchIfNeeded];
+            [[self top5DetailViewController] setApp3:[[PFUser currentUser] objectForKey:@"app3"]];
+        }
         
-        if (!usersTop5Apps)
-            NSLog(@"Still no array");
+        if ([[PFUser currentUser] objectForKey:@"app4"])
+        {
+            [[[PFUser currentUser] objectForKey:@"app4"] fetchIfNeeded];
+            [[self top5DetailViewController] setApp4:[[PFUser currentUser] objectForKey:@"app4"]];
+        }
         
-        [[self top5DetailViewController] setTop5Apps:usersTop5Apps];
+        if ([[PFUser currentUser] objectForKey:@"app5"])
+        {
+            [[[PFUser currentUser] objectForKey:@"app5"] fetchIfNeeded];
+            [[self top5DetailViewController] setApp5:[[PFUser currentUser] objectForKey:@"app5"]];
+        }
     }
     
-    
-    
-    
     [[self navigationController] pushViewController:[self top5DetailViewController] animated:YES];
+}
+
+- (void)showUsersTop5ViewControllerWithChosenApp:(PFObject*)app
+{
+    switch ([[self top5DetailViewController] appSlotBeingEdited]) 
+    {
+        case 1:
+            [[self top5DetailViewController] setApp1:app];
+            [[PFUser currentUser] setObject:app forKey:@"app1"];
+            break;
+        case 2:
+            [[self top5DetailViewController] setApp2:app];
+            [[PFUser currentUser] setObject:app forKey:@"app2"];
+            break;
+        case 3:
+            [[self top5DetailViewController] setApp3:app];
+            [[PFUser currentUser] setObject:app forKey:@"app3"];
+            break;
+        case 4:
+            [[self top5DetailViewController] setApp4:app];
+            [[PFUser currentUser] setObject:app forKey:@"app4"];
+            break;
+        case 5:
+            [[self top5DetailViewController] setApp5:app];
+            [[PFUser currentUser] setObject:app forKey:@"app5"];
+            break;
+        default:
+            break;
+    }
+    [[[self top5DetailViewController] tableView] reloadData];
+    [[PFUser currentUser] save];
+    [[self navigationController] popToViewController:[self top5DetailViewController] animated:YES];
 }
 
 - (void)showAppSearchViewController

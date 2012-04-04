@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @protocol Top5NavigationDelegate <NSObject>
 
@@ -18,6 +19,8 @@
 //- (void)showTop5ViewControllerWithList:(PFObject*)top5List;
 
 - (void)showAppSearchViewController;
+
+- (void)showUsersTop5ViewControllerWithChosenApp:(PFObject*)app;
 
 - (void)dismissAccountViewController;
 @end
