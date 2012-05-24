@@ -58,9 +58,21 @@
     NSInteger appID = [[[[self appResults] objectAtIndex:indexPath.row] objectForKey:@"trackId"] integerValue];
     NSString *appName = [[[self appResults] objectAtIndex:indexPath.row] objectForKey:@"trackName"];
     NSString *appMaker = [[[self appResults] objectAtIndex:indexPath.row] objectForKey:@"artistName"];
+    NSString *appURL = [[[self appResults] objectAtIndex:indexPath.row] objectForKey:@"trackViewUrl"];
+    NSString *appIconURL = [[[self appResults] objectAtIndex:indexPath.row] objectForKey:@"artworkUrl60"];
     
+    PFObject *app = [PFObject objectWithClassName:@"App"];
+    [app setObject:[NSNumber numberWithInteger:appID] forKey:@"appID"];
+    [app setObject:appName forKey:@"appName"];
+    [app setObject:appMaker forKey:@"appMaker"];
+    [app setObject:appURL forKey:@"appURL"];
+    [app setObject:appIconURL forKey:@"appIconURL"];
+    // Hang on to it locally....
+    
+    [[PFUser currentUser] setObject:app forKey:[self appKey]];
+        
     PFQuery *appQuery = [PFQuery queryWithClassName:@"App"];
-    [appQuery whereKey:@"appID" equalTo:[NSString stringWithFormat:@"%d", appID]];
+    [appQuery whereKey:@"appID" equalTo:[NSNumber numberWithInteger:appID]];
     [appQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
         if (!error)
@@ -69,6 +81,8 @@
             
             if ([objects count] > 0)
             {
+                // Update app.... local to parse....
+                /*
                 NSLog(@"Objects found: %d", [objects count]);
                 
                 app = [objects objectAtIndex:0];
@@ -89,26 +103,23 @@
                 
                 if (needsSaving)
                     [app save];
+                 */
             }
             else 
             {
                 NSLog(@"No App found.. creating");
-                
-                // Create an app
-                app = [PFObject objectWithClassName:@"App"];
-                [app setObject:[NSNumber numberWithInteger:appID] forKey:@"appID"];
-                [app setObject:appName forKey:@"appName"];
-                [app setObject:appMaker forKey:@"appMaker"];
-                [app save];
+                // Save the local app to parse....
             }
             
-            [[self navigationDelegate] showUsersTop5ViewControllerWithChosenApp:app];
+            
         }
         else
         {
             NSLog(@"App Query Error: %@", [error userInfo]); 
         }
      }];
+    
+    [[self navigationDelegate] showUsersTop5ViewControllerWithChosenApp:app];
     
     // Show the loading view...?
     
@@ -225,6 +236,8 @@
 }
 
 #pragma mark - Property Synthesis
+
+@synthesize appKey;
 
 @synthesize navigationDelegate;
 @synthesize searchDisplayController;

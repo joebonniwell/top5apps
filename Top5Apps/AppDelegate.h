@@ -15,6 +15,9 @@
 #import "MenuViewController.h"
 #import "Top5DetailViewController.h"
 #import "AppSearchViewController.h"
+#import "AppDetailViewController.h"
+#import "Top5ListViewController.h"
+#import "AppListViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, Top5NavigationDelegate>
 {
@@ -23,6 +26,9 @@
     MenuViewController *menuViewController_gv;
     Top5DetailViewController *top5DetailViewController_gv;
     AppSearchViewController *appSearchViewController_gv;
+    AppDetailViewController *appDetailViewController_gv;
+    Top5ListViewController *top5ListViewController_gv;
+    AppListViewController *appListViewController_gv;
 }
 
 
@@ -33,5 +39,7 @@
 @property (strong, nonatomic, readonly) MenuViewController *menuViewController;
 @property (strong, nonatomic, readonly) Top5DetailViewController *top5DetailViewController;
 @property (strong, nonatomic, readonly) AppSearchViewController *appSearchViewController;
-
+@property (strong, nonatomic, readonly) AppDetailViewController *appDetailViewController;
+@property (strong, nonatomic, readonly) Top5ListViewController *top5ListViewController;
+@property (strong, nonatomic, readonly) AppListViewController *appListViewController;
 @end

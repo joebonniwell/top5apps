@@ -211,14 +211,48 @@
     [[self navigationController] popToViewController:[self top5DetailViewController] animated:YES];
 }
 
-- (void)showAppSearchViewController
+- (void)showAppSearchViewControllerToSelectApp:(NSInteger)argAppToSelect
 {
+    [[self appSearchViewController] setAppKey:[NSString stringWithFormat:@"app%d", argAppToSelect]];
+    
     [[self navigationController] pushViewController:[self appSearchViewController] animated:YES];
 }
 
 - (void)dismissAccountViewController
 {
     [[self menuViewController] dismissModalViewControllerAnimated:YES];
+}
+
+- (void)showAppDetailViewController
+{
+    [[self navigationController] pushViewController:[self appDetailViewController] animated:YES];
+}
+
+- (void)showTop5ListViewController
+{
+    [[self navigationController] pushViewController:[self top5ListViewController] animated:YES];
+}
+
+- (void)showAccountViewController
+{
+    [[self navigationController] pushViewController:[self accountViewController] animated:YES];
+}
+
+- (void)showTop5DetailViewController
+{
+    [[self top5DetailViewController] setUsersTop5:NO];
+    [[self top5DetailViewController] setApp1:nil];
+    [[self top5DetailViewController] setApp2:nil];
+    [[self top5DetailViewController] setApp3:nil];
+    [[self top5DetailViewController] setApp4:nil];
+    [[self top5DetailViewController] setApp5:nil];
+    [[[self top5DetailViewController] tableView] reloadData];
+    [[self navigationController] pushViewController:[self top5DetailViewController] animated:YES];
+}
+
+- (void)showAppListViewController
+{
+    [[self navigationController] pushViewController:[self appListViewController] animated:YES];
 }
 
 #pragma mark - AccountViewController
@@ -263,6 +297,39 @@
     appSearchViewController_gv = [[AppSearchViewController alloc] init];
     [appSearchViewController_gv setNavigationDelegate:self];
     return appSearchViewController_gv;
+}
+
+#pragma mark - AppDetailViewController
+
+- (AppDetailViewController*)appDetailViewController
+{
+    if (appDetailViewController_gv)
+        return appDetailViewController_gv;
+    appDetailViewController_gv = [[AppDetailViewController alloc] init];
+    [appDetailViewController_gv setNavigationDelegate:self];
+    return appDetailViewController_gv;
+}
+
+#pragma mark - Top5ListViewController
+
+- (Top5ListViewController*)top5ListViewController
+{
+    if (top5ListViewController_gv)
+        return top5ListViewController_gv;
+    top5ListViewController_gv = [[Top5ListViewController alloc] init];
+    [top5ListViewController_gv setNavigationDelegate:self];
+    return top5ListViewController_gv;
+}
+
+#pragma mark - Top5ListViewController
+
+- (AppListViewController*)appListViewController
+{
+    if (appListViewController_gv)
+        return appListViewController_gv;
+    appListViewController_gv = [[AppListViewController alloc] init];
+    [appListViewController_gv setNavigationDelegate:self];
+    return appListViewController_gv;
 }
 
 #pragma mark - Property Synthesis

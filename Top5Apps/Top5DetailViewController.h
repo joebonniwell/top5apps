@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Top5NavigationDelegate.h"
+#import "Top5DetailTableViewCell.h"
 
 @interface Top5DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

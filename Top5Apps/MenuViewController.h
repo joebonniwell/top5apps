@@ -11,7 +11,9 @@
 
 #import "Top5NavigationDelegate.h"
 
-@interface MenuViewController : UIViewController
+@interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, retain) UITableView *tableView;
 
 @property (strong, nonatomic) UIButton *meButton;
 @property (strong, nonatomic) UIButton *friendsButton;

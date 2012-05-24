@@ -12,6 +12,8 @@
 
 @interface AppSearchViewController : UIViewController <UISearchDisplayDelegate, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
+@property (nonatomic, retain) NSString *appKey;
+
 @property (nonatomic, assign) id<Top5NavigationDelegate> navigationDelegate;
 @property (nonatomic, retain) UISearchDisplayController *searchDisplayController;
 @property (nonatomic, retain) UISearchBar *searchBar;

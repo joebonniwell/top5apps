@@ -18,9 +18,19 @@
 - (void)showUsersTop5ViewController;
 //- (void)showTop5ViewControllerWithList:(PFObject*)top5List;
 
-- (void)showAppSearchViewController;
+- (void)showAppSearchViewControllerToSelectApp:(NSInteger)argAppToSelect;
 
 - (void)showUsersTop5ViewControllerWithChosenApp:(PFObject*)app;
 
 - (void)dismissAccountViewController;
+
+- (void)showAppDetailViewController;
+
+- (void)showTop5ListViewController;
+
+- (void)showAccountViewController;
+
+- (void)showTop5DetailViewController;
+
+- (void)showAppListViewController;
 @end

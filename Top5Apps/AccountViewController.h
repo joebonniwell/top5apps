@@ -11,7 +11,7 @@
 
 #import "Top5NavigationDelegate.h"
 
-@interface AccountViewController : UIViewController
+@interface AccountViewController : UIViewController <PF_FBRequestDelegate>
 
 @property (nonatomic, assign) id<Top5NavigationDelegate> navigationDelegate;
 

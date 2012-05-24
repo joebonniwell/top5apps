@@ -24,7 +24,14 @@
 		1F00BDF9152812FC0069BD6C /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00BDF8152812FC0069BD6C /* AccountViewController.m */; };
 		1F00BDFC152948250069BD6C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00BDFB152948250069BD6C /* MenuViewController.m */; };
 		1F00BE00152951BF0069BD6C /* Top5DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00BDFF152951BF0069BD6C /* Top5DetailViewController.m */; };
+		D81FF99A1530918B0028524B /* Top5DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81FF9991530918B0028524B /* Top5DetailTableViewCell.m */; };
+		D8233A9A1543270D005EDE47 /* Top5ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8233A991543270D005EDE47 /* Top5ListTableViewCell.m */; };
+		D8233A9E15432751005EDE47 /* AppListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8233A9D15432751005EDE47 /* AppListTableViewCell.m */; };
+		D865496E15428BE800CE9BE8 /* AppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D865496D15428BE800CE9BE8 /* AppListViewController.m */; };
+		D865497215428BFB00CE9BE8 /* AppDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D865497115428BFB00CE9BE8 /* AppDetailViewController.m */; };
 		D8B52022152AA63D0060EEEE /* AppSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B52021152AA63D0060EEEE /* AppSearchViewController.m */; };
+		D8D2F562156E6D0700908771 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D2F561156E6D0700908771 /* DownloadManager.m */; };
+		D8E819F91543193E009A8724 /* Top5ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E819F81543193E009A8724 /* Top5ListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +60,22 @@
 		1F00BDFD15294B500069BD6C /* Top5NavigationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Top5NavigationDelegate.h; sourceTree = "<group>"; };
 		1F00BDFE152951BF0069BD6C /* Top5DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Top5DetailViewController.h; sourceTree = "<group>"; };
 		1F00BDFF152951BF0069BD6C /* Top5DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Top5DetailViewController.m; sourceTree = "<group>"; };
+		D81FF9981530918B0028524B /* Top5DetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Top5DetailTableViewCell.h; sourceTree = "<group>"; };
+		D81FF9991530918B0028524B /* Top5DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Top5DetailTableViewCell.m; sourceTree = "<group>"; };
+		D8233A981543270D005EDE47 /* Top5ListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Top5ListTableViewCell.h; sourceTree = "<group>"; };
+		D8233A991543270D005EDE47 /* Top5ListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Top5ListTableViewCell.m; sourceTree = "<group>"; };
+		D8233A9C15432751005EDE47 /* AppListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppListTableViewCell.h; sourceTree = "<group>"; };
+		D8233A9D15432751005EDE47 /* AppListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppListTableViewCell.m; sourceTree = "<group>"; };
+		D865496C15428BE800CE9BE8 /* AppListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppListViewController.h; sourceTree = "<group>"; };
+		D865496D15428BE800CE9BE8 /* AppListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppListViewController.m; sourceTree = "<group>"; };
+		D865497015428BFB00CE9BE8 /* AppDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDetailViewController.h; sourceTree = "<group>"; };
+		D865497115428BFB00CE9BE8 /* AppDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDetailViewController.m; sourceTree = "<group>"; };
 		D8B52020152AA63D0060EEEE /* AppSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSearchViewController.h; sourceTree = "<group>"; };
 		D8B52021152AA63D0060EEEE /* AppSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSearchViewController.m; sourceTree = "<group>"; };
+		D8D2F560156E6D0700908771 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
+		D8D2F561156E6D0700908771 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
+		D8E819F71543193E009A8724 /* Top5ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Top5ListViewController.h; sourceTree = "<group>"; };
+		D8E819F81543193E009A8724 /* Top5ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Top5ListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,13 +141,8 @@
 				1F00BDD615280AA60069BD6C /* AppDelegate.h */,
 				1F00BDD715280AA60069BD6C /* AppDelegate.m */,
 				1F00BDFD15294B500069BD6C /* Top5NavigationDelegate.h */,
-				1F00BDF615280F300069BD6C /* AppSearchViewController */,
-				1F00BDF515280F260069BD6C /* AppListViewController */,
-				1F00BDF415280F170069BD6C /* AppDetailViewController */,
-				1F00BDF315280F0F0069BD6C /* Top5DetailViewController */,
-				1F00BDF215280EFD0069BD6C /* Top5ListViewController */,
-				1F00BDF115280EF40069BD6C /* AccountViewController */,
-				1F00BDF015280ED70069BD6C /* MenuViewController */,
+				D8D2F55D156E6CC300908771 /* View Controllers */,
+				D8D2F55F156E6CCE00908771 /* DownloadManager */,
 				1F00BDCE15280AA60069BD6C /* Supporting Files */,
 			);
 			path = Top5Apps;
@@ -164,6 +180,9 @@
 		1F00BDF215280EFD0069BD6C /* Top5ListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D8E819F71543193E009A8724 /* Top5ListViewController.h */,
+				D8E819F81543193E009A8724 /* Top5ListViewController.m */,
+				D8E819FC15431BE2009A8724 /* Top5ListTableViewCell */,
 			);
 			name = Top5ListViewController;
 			sourceTree = "<group>";
@@ -173,6 +192,7 @@
 			children = (
 				1F00BDFE152951BF0069BD6C /* Top5DetailViewController.h */,
 				1F00BDFF152951BF0069BD6C /* Top5DetailViewController.m */,
+				D865497315428D4D00CE9BE8 /* Top5DetailTableViewCell */,
 			);
 			name = Top5DetailViewController;
 			sourceTree = "<group>";
@@ -180,6 +200,8 @@
 		1F00BDF415280F170069BD6C /* AppDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D865497015428BFB00CE9BE8 /* AppDetailViewController.h */,
+				D865497115428BFB00CE9BE8 /* AppDetailViewController.m */,
 			);
 			name = AppDetailViewController;
 			sourceTree = "<group>";
@@ -187,6 +209,9 @@
 		1F00BDF515280F260069BD6C /* AppListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D865496C15428BE800CE9BE8 /* AppListViewController.h */,
+				D865496D15428BE800CE9BE8 /* AppListViewController.m */,
+				D8E819FB15431BD2009A8724 /* AppListTableViewCell */,
 			);
 			name = AppListViewController;
 			sourceTree = "<group>";
@@ -198,6 +223,56 @@
 				D8B52021152AA63D0060EEEE /* AppSearchViewController.m */,
 			);
 			name = AppSearchViewController;
+			sourceTree = "<group>";
+		};
+		D865497315428D4D00CE9BE8 /* Top5DetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D81FF9981530918B0028524B /* Top5DetailTableViewCell.h */,
+				D81FF9991530918B0028524B /* Top5DetailTableViewCell.m */,
+			);
+			name = Top5DetailTableViewCell;
+			sourceTree = "<group>";
+		};
+		D8D2F55D156E6CC300908771 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F00BDF615280F300069BD6C /* AppSearchViewController */,
+				1F00BDF515280F260069BD6C /* AppListViewController */,
+				1F00BDF415280F170069BD6C /* AppDetailViewController */,
+				1F00BDF315280F0F0069BD6C /* Top5DetailViewController */,
+				1F00BDF215280EFD0069BD6C /* Top5ListViewController */,
+				1F00BDF115280EF40069BD6C /* AccountViewController */,
+				1F00BDF015280ED70069BD6C /* MenuViewController */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D8D2F55F156E6CCE00908771 /* DownloadManager */ = {
+			isa = PBXGroup;
+			children = (
+				D8D2F560156E6D0700908771 /* DownloadManager.h */,
+				D8D2F561156E6D0700908771 /* DownloadManager.m */,
+			);
+			name = DownloadManager;
+			sourceTree = "<group>";
+		};
+		D8E819FB15431BD2009A8724 /* AppListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D8233A9C15432751005EDE47 /* AppListTableViewCell.h */,
+				D8233A9D15432751005EDE47 /* AppListTableViewCell.m */,
+			);
+			name = AppListTableViewCell;
+			sourceTree = "<group>";
+		};
+		D8E819FC15431BE2009A8724 /* Top5ListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D8233A981543270D005EDE47 /* Top5ListTableViewCell.h */,
+				D8233A991543270D005EDE47 /* Top5ListTableViewCell.m */,
+			);
+			name = Top5ListTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +342,13 @@
 				1F00BDFC152948250069BD6C /* MenuViewController.m in Sources */,
 				1F00BE00152951BF0069BD6C /* Top5DetailViewController.m in Sources */,
 				D8B52022152AA63D0060EEEE /* AppSearchViewController.m in Sources */,
+				D81FF99A1530918B0028524B /* Top5DetailTableViewCell.m in Sources */,
+				D865496E15428BE800CE9BE8 /* AppListViewController.m in Sources */,
+				D865497215428BFB00CE9BE8 /* AppDetailViewController.m in Sources */,
+				D8E819F91543193E009A8724 /* Top5ListViewController.m in Sources */,
+				D8233A9A1543270D005EDE47 /* Top5ListTableViewCell.m in Sources */,
+				D8233A9E15432751005EDE47 /* AppListTableViewCell.m in Sources */,
+				D8D2F562156E6D0700908771 /* DownloadManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

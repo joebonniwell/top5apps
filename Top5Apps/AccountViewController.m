@@ -60,13 +60,39 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)request:(PF_FBRequest *)request didLoad:(id)result
+{
+    //NSLog(@"Request: %@", request);
+    //NSLog(@"Request Result: %@", result);
+    
+    if ([[result class] isSubclassOfClass:[NSDictionary class]])
+    {
+        [[PFUser currentUser] setUsername:[(NSDictionary*)result objectForKey:@"name"]];
+            
+        PF_FBRequest *request2 = [[PFFacebookUtils facebook] requestWithGraphPath:@"me/picture" andDelegate:self];
+        [request2 connect];
+        
+        [[PFUser currentUser] save];
+    }
+    else 
+    {
+        NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *userProfileImagePath = [[searchPaths lastObject] stringByAppendingPathExtension:@"userImage.data"];
+        [(NSData*)result writeToFile:userProfileImagePath atomically:NO];
+    }
+}
+
+- (void)request:(PF_FBRequest *)request didFailWithError:(NSError *)error
+{
+    NSLog(@"Requst failed: %@", [error userInfo]);
+}
 #pragma mark - Button Actions
 
 - (void)facebookButtonTapped
 {
     NSLog(@"Facebook button tapped");
         
-    [PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error) 
+    [PFFacebookUtils logInWithPermissions:[NSArray arrayWithObject:@"offline_access"] block:^(PFUser *user, NSError *error) 
     {
         NSLog(@"Completed");
         if (!user) 
@@ -78,6 +104,10 @@
         else if (user.isNew) 
         {
             NSLog(@"User signed up and logged in through Facebook!");
+            
+            PF_FBRequest *request = [[PFFacebookUtils facebook] requestWithGraphPath:@"me" andDelegate:self];
+            [request connect];
+            
             [[self parentViewController] dismissViewControllerAnimated:YES completion:nil];
             // Dismiss the accountviewcontroller and go to the mytop5app, editing mode
         } 
@@ -85,6 +115,8 @@
         {
             NSLog(@"User logged in through Facebook!");
             
+            PF_FBRequest *request = [[PFFacebookUtils facebook] requestWithGraphPath:@"me" andDelegate:self];
+            [request connect];
             
             if (![self parentViewController])
                 NSLog(@"No parent view controller");
