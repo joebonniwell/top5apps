@@ -13,4 +13,12 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#define ConnectionData  @"ConnectionData"
+#define T5ConnectionData      @"T5ConnectionData"
+#define T5ConnectionURLString @"T5ConnectionURLString"
+#define T5ConnectionType      @"T5ConnectionType"
+
+typedef enum 
+{
+    T5DownloadTypeImageDownload = 0,
+    T5DownloadTypeSearchDownload = 1
+} T5DownloadType;
